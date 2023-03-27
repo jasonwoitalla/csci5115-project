@@ -33,4 +33,16 @@
 
     <!-- Landing Page -->
     <string name="productWiki">Product WIKI</string>
+
+    <!-- specific product page -->
+    <string name="laptops">Laptops</string>
+    <string name="smartphone">Smartphones</string>
+    <string name="smartwatches">Smart Watches</string>
+    <string name="gamingConsoles">Gaming Consoles</string>
+    <string name="bluetooth">Bluetooth</string>
+
+    <string name="placeHolder">Blah blah blah</string>
+
+    <!-- comment out later -->
+    <string name="commentSection">this is where the comment section will go</string>
 </resources>

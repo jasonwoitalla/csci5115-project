@@ -56,9 +56,11 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="199dp"
-        android:layout_height="353dp"
-        tools:layout_editor_absoluteX="108dp"
-        tools:layout_editor_absoluteY="123dp" />
+        android:layout_width="411dp"
+        android:layout_height="567dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="107dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
