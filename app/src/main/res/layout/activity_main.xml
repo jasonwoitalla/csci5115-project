@@ -24,6 +24,15 @@
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/Theme.Csci5115Project.PopupOverlay" />
 
+        <TextView
+            android:id="@+id/productWikiTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:text="@string/productWiki"
+            android:textSize="35sp" />
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <include
@@ -44,5 +53,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="199dp"
+        android:layout_height="353dp"
+        tools:layout_editor_absoluteX="108dp"
+        tools:layout_editor_absoluteY="123dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
