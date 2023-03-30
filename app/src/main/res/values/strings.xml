@@ -30,4 +30,14 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <string-array name="device_categories">
+        <item>Phone</item>
+        <item>Battery</item>
+        <item>Lightbulb</item>
+        <item>Gaming Console</item>
+        <item>Laptop</item>
+        <item>Charger</item>
+        <item>Smart Watch</item>
+    </string-array>
 </resources>
