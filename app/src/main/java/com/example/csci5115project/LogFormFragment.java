@@ -141,6 +141,14 @@ public class LogFormFragment extends Fragment
             }
         });
 
+        Button logButton = (Button) root.findViewById(R.id.confirmLogButton);
+        logButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentUtil.replaceFragment(getActivity(), new ConfirmationFragment());
+            }
+        });
+
         return root;
     }
 

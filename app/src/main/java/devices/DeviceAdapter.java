@@ -27,7 +27,7 @@ public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.DeviceView
     @Override
     public DeviceViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mCtx);
-        View view = inflater.inflate(R.layout.layout_device, null);
+        View view = inflater.inflate(R.layout.layout_device, parent, false);
         return new DeviceViewHolder(view);
     }
 
