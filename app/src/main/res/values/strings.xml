@@ -31,6 +31,35 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
 
+    <!-- Landing Page -->
+    <string name="productWiki">Product WIKI</string>
+
+    <!-- specific product page -->
+    <string name="laptops">Laptops</string>
+    <string name="smartphone">Smartphones</string>
+    <string name="smartwatches">Smart Watches</string>
+    <string name="gamingConsoles">Gaming Consoles</string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="batteries">Batteries</string>
+    <string name="lightbulb">Lightbulbs</string>
+    <string name="charger">Chargers</string>
+
+    <string name="back">back</string>
+
+    <string name="bluetoothDesc"> E-Waste Management Information: \n \t Many bluetooth devices can be taken in to the nearest \n \t Best Buy. Other options involve donating them to a local \n \t Goodwill and if they are no longer repairable, recycling \n \t them.
+        \n Brand Average Lifespan: \n 1. Sony: 6-8 years \n 2. Bose: 6-8 years \n 3. Jabra: 3-4 years \n 4. Samsung: 3-5 years \n 5. Raycon: 4-6 years
+        \n Most Popular Bluetooth Brands: \n 1. Sony \n 2. Bose \n 3. Jabra \n 4. Samsung \n 5. Raycon</string>
+    <string name="smartphoneDesc">Blah blah blah</string>
+    <string name="smartwatchDesc">Blah blah blah</string>
+    <string name="laptopDesc">Blah blah blah</string>
+    <string name="lightbulbDesc">Blah blah blah</string>
+    <string name="batteriesDesc">Blah blah blah</string>
+    <string name="chargerDesc">Blah blah blah</string>
+
+
+    <string name="commentSectionButton">Send</string>
+    <string name="commentSection">add comment</string>
+    
     <string-array name="device_categories">
         <item>Phone</item>
         <item>Battery</item>
