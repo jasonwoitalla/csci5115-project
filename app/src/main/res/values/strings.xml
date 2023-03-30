@@ -40,6 +40,9 @@
     <string name="smartwatches">Smart Watches</string>
     <string name="gamingConsoles">Gaming Consoles</string>
     <string name="bluetooth">Bluetooth</string>
+    <string name="batteries">Batteries</string>
+    <string name="lightbulb">Lightbulbs</string>
+    <string name="charger">Chargers</string>
 
     <string name="back">back</string>
 
@@ -49,6 +52,9 @@
     <string name="smartphoneDesc">Blah blah blah</string>
     <string name="smartwatchDesc">Blah blah blah</string>
     <string name="laptopDesc">Blah blah blah</string>
+    <string name="lightbulbDesc">Blah blah blah</string>
+    <string name="batteriesDesc">Blah blah blah</string>
+    <string name="chargerDesc">Blah blah blah</string>
 
 
     <string name="commentSectionButton">Send</string>
