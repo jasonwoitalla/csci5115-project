@@ -59,4 +59,14 @@
 
     <string name="commentSectionButton">Send</string>
     <string name="commentSection">add comment</string>
+    
+    <string-array name="device_categories">
+        <item>Phone</item>
+        <item>Battery</item>
+        <item>Lightbulb</item>
+        <item>Gaming Console</item>
+        <item>Laptop</item>
+        <item>Charger</item>
+        <item>Smart Watch</item>
+    </string-array>
 </resources>
