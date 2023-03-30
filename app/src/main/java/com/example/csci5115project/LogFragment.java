@@ -3,10 +3,21 @@ package com.example.csci5115project;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import devices.Device;
+import devices.DeviceAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +34,9 @@ public class LogFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private List<Device> deviceList;
+    RecyclerView recyclerView;
 
     public LogFragment() {
         // Required empty public constructor
@@ -58,7 +72,81 @@ public class LogFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_log, container, false);
+
+        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_log, container, false);
+
+        Button logDeviceButton = (Button) root.findViewById(R.id.logDeviceButton);
+        logDeviceButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                replaceFragment(new LogFormFragment());
+            }
+        });
+
+        recyclerView = (RecyclerView) root.findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        deviceList = new ArrayList<>();
+
+        deviceList.add(
+                new Device(
+                        "iPhone 17",
+                        R.drawable.iphone_image
+                ));
+
+        deviceList.add(
+                new Device(
+                        "iPhone 5c",
+                        R.drawable.iphone_image
+                ));
+
+        deviceList.add(
+                new Device(
+                        "iPhone 88",
+                        R.drawable.iphone_image
+                ));
+
+        deviceList.add(
+                new Device(
+                        "Surface Pro 4",
+                        R.drawable.surface
+                ));
+
+        deviceList.add(
+                new Device(
+                        "Macbook",
+                        R.drawable.macbook
+                ));
+
+        deviceList.add(
+                new Device(
+                        "iPhone 2",
+                        R.drawable.iphone_image
+                ));
+
+        deviceList.add(
+                new Device(
+                        "Macbook Air",
+                        R.drawable.macbook
+                ));
+
+        deviceList.add(
+                new Device(
+                        "Surface Pro 18",
+                        R.drawable.surface
+                ));
+
+        DeviceAdapter adapter = new DeviceAdapter(getActivity(), deviceList);
+        recyclerView.setAdapter(adapter);
+
+        return root;
+    }
+
+    private void replaceFragment(Fragment fragment) {
+        FragmentManager manager = getActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = manager.beginTransaction();
+        fragmentTransaction.replace(R.id.frameLayout, fragment);
+        fragmentTransaction.commit();
     }
 }
