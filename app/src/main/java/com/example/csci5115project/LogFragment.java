@@ -11,9 +11,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import devices.Device;
@@ -75,7 +76,7 @@ public class LogFragment extends Fragment {
 
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_log, container, false);
 
-        Button logDeviceButton = (Button) root.findViewById(R.id.logDeviceButton);
+        ImageButton logDeviceButton = (ImageButton) root.findViewById(R.id.logDeviceButton);
         logDeviceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -137,6 +138,12 @@ public class LogFragment extends Fragment {
                         R.drawable.surface
                 ));
 
+        Device loggedDevice = (Device)getActivity().getIntent().getParcelableExtra("logged_device");
+        if(loggedDevice != null) {
+            deviceList.add(loggedDevice);
+        }
+
+        Collections.reverse(deviceList);
         DeviceAdapter adapter = new DeviceAdapter(getActivity(), deviceList);
         recyclerView.setAdapter(adapter);
 

@@ -55,6 +55,7 @@
     <string name="lightbulbDesc">Blah blah blah</string>
     <string name="batteriesDesc">Blah blah blah</string>
     <string name="chargerDesc">Blah blah blah</string>
+    <string name="placeHolder">Blah blah blah</string>
 
 
     <string name="commentSectionButton">Send</string>

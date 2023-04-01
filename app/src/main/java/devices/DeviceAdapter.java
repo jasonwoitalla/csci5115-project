@@ -36,7 +36,11 @@ public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.DeviceView
         Device device = deviceList.get(position);
 
         holder.textViewTitle.setText(device.getDeviceName());
-        holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(device.getImage()));
+        if(device.getBitmap() == null) {
+            holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(device.getImage()));
+        } else {
+            holder.imageView.setImageBitmap(device.getBitmap());
+        }
     }
 
     @Override
