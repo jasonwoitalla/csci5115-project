@@ -7,9 +7,9 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="289dp"
-        android:layout_height="54dp"
-        android:text="@string/gamingConsoles"
+        android:layout_width="142dp"
+        android:layout_height="55dp"
+        android:text="@string/batteries"
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
@@ -24,14 +24,14 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/gamingconsoles" />
+        app:srcCompat="@drawable/batteries" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="371dp"
         android:layout_height="323dp"
-        android:layout_marginTop="12dp"
-        android:text="@string/gamingConsoleDesc"
+        android:layout_marginTop="8dp"
+        android:text="@string/batteriesDesc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.3"
         app:layout_constraintStart_toStartOf="parent"
