@@ -60,7 +60,7 @@ public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.DeviceView
     @Override
     public DeviceViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mCtx);
-        View view = inflater.inflate(R.layout.layout_device, null);
+        View view = inflater.inflate(R.layout.layout_device, parent, false);
         return new DeviceViewHolder(view);
     }
 
@@ -83,7 +83,11 @@ public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.DeviceView
         tv2.setText(this.title2.get(position));
 
         holder.textViewTitle.setText(device.getDeviceName());
-        holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(device.getImage()));
+        if(device.getBitmap() == null) {
+            holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(device.getImage()));
+        } else {
+            holder.imageView.setImageBitmap(device.getBitmap());
+        }
         this.popUp = new PopupWindow();
 
         LinearLayout layout = new LinearLayout(this.mCtx);
