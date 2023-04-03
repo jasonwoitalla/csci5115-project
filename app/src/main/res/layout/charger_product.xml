@@ -24,7 +24,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/chargering_cords" />
+        app:srcCompat="@drawable/chargercord" />
 
     <TextView
         android:id="@+id/textView4"
