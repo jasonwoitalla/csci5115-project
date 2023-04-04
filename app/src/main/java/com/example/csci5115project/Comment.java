@@ -13,16 +13,16 @@ private String commenter;
         this.commenter = commenter;
     }
 
-    public int getLikes() {
-        return likes;
+    public String getLikes() {
+        return ""+likes;
     }
 
     public void setLikes(int likes) {
         this.likes = likes;
     }
 
-    public int getDislikes() {
-        return dislikes;
+    public String getDislikes() {
+        return  ""+ dislikes;
     }
 
     public void setDislikes(int dislikes) {
