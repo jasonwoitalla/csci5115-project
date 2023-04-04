@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Matrix;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 
 import androidx.activity.result.ActivityResult;
@@ -16,6 +18,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import android.os.Parcel;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -24,9 +27,13 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import devices.Device;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -106,7 +113,15 @@ public class LogFormFragment extends Fragment
                         if(result.getResultCode() == Activity.RESULT_OK) {
                             Intent data = result.getData();
                             Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
-                            preview.setImageBitmap(thumbnail);
+                            Matrix matrix = new Matrix();
+                            matrix.postRotate(90);
+                            Bitmap rotatedThumbnail = Bitmap.createBitmap(thumbnail, 0, 0, thumbnail.getWidth(), thumbnail.getHeight(), matrix, true);
+
+                            preview.setVisibility(View.VISIBLE);
+                            preview.setImageBitmap(rotatedThumbnail);
+
+                            TextView addPicture = (TextView) root.findViewById(R.id.addPictureText);
+                            addPicture.setVisibility(View.INVISIBLE);
                         }
                     }
                 }
@@ -141,10 +156,18 @@ public class LogFormFragment extends Fragment
             }
         });
 
+        /*
+        Log button, go back to the log page
+         */
+
         Button logButton = (Button) root.findViewById(R.id.confirmLogButton);
         logButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String deviceName = ((EditText) root.findViewById(R.id.productNameField)).getText().toString();
+                Device newDevice = new Device(deviceName, ((BitmapDrawable)preview.getDrawable()).getBitmap());
+                getActivity().getIntent().putExtra("logged_device", newDevice);
+
                 FragmentUtil.replaceFragment(getActivity(), new ConfirmationFragment());
             }
         });
