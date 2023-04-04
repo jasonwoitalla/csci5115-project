@@ -1,6 +1,5 @@
 package com.example.csci5115project;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -19,9 +18,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
-    public static final String EXTRA_MESSAGE = "com.example.csci5115project.MESSAGE";
     List<Comment> commentList;
     BluetoothComment btFragment = new BluetoothComment();
+    SmartphoneComment spFragment = new SmartphoneComment();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         replaceFragment(new HomeFragment());
-
         setSupportActionBar(binding.toolbar);
 
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
@@ -62,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void addComment(View view){
 
-        EditText editText = (EditText) findViewById(R.id.editText);
+        EditText editText = findViewById(R.id.editText);
         String message = editText.getText().toString();
         btFragment.commentList.add((new Comment(0,0,message,"anon_user")));
         replaceFragment(btFragment);//MAY NEED BACKSTACK
@@ -75,13 +73,10 @@ public class MainActivity extends AppCompatActivity {
 //        startActivity(intent);
     }
     public void addCommentSmartphone(View view){
-        Intent intent = new Intent(this, SmartphoneComment.class);
-        EditText editText = (EditText) findViewById(R.id.editText);
+        EditText editText = findViewById(R.id.editText);
         String message = editText.getText().toString();
-        //     commentList.add(new Comment(0,0,message,"anon_user"));
-
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
+        spFragment.commentList.add((new Comment(0,0,message,"anon_user")));
+        replaceFragment(spFragment);
     }
     private void replaceFragment(Fragment fragment) {
         FragmentManager manager = getSupportFragmentManager();
@@ -89,4 +84,5 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.frameLayout, fragment);
         fragmentTransaction.commit();
     }
+
 }
