@@ -1,6 +1,9 @@
 package com.example.csci5115project;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,9 +14,14 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.csci5115project.databinding.ActivityMainBinding;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
-
+    public static final String EXTRA_MESSAGE = "com.example.csci5115project.MESSAGE";
+    List<Comment> commentList;
+    BluetoothComment btFragment = new BluetoothComment();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,8 +53,36 @@ public class MainActivity extends AppCompatActivity {
             }
             return true;
         });
-    }
 
+        //initializing the productlist
+        commentList = new ArrayList<>();
+        commentList.add(new Comment(242,22,"The Google Pixel is an example of forced obsolescence", "Jane Smith"));
+        commentList.add(new Comment(222,111,"The Google Pixel is an example of forced obsolescence", "Jane Smithy"));
+        commentList.add(new Comment(112,2,"The Google Pixel is an example of forced obsolescence", "Janey Smith"));
+    }
+    public void addComment(View view){
+
+        EditText editText = (EditText) findViewById(R.id.editText);
+        String message = editText.getText().toString();
+        btFragment.commentList.add((new Comment(0,0,message,"anon_user")));
+        replaceFragment(btFragment);//MAY NEED BACKSTACK
+//        Intent intent = new Intent(this, BluetoothComment.class);
+//        EditText editText = (EditText) findViewById(R.id.editText);
+//        String message = editText.getText().toString();
+//   //     commentList.add(new Comment(0,0,message,"anon_user"));
+//
+//        intent.putExtra(EXTRA_MESSAGE, message);
+//        startActivity(intent);
+    }
+    public void addCommentSmartphone(View view){
+        Intent intent = new Intent(this, SmartphoneComment.class);
+        EditText editText = (EditText) findViewById(R.id.editText);
+        String message = editText.getText().toString();
+        //     commentList.add(new Comment(0,0,message,"anon_user"));
+
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+    }
     private void replaceFragment(Fragment fragment) {
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = manager.beginTransaction();

@@ -30,8 +30,8 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
     public CommentViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //inflating and returning our view holder
         LayoutInflater inflater = LayoutInflater.from(mCtx);
-//        View view = inflater.inflate(R.layout.layout_products, null);
-//        return new CommentViewHolder(view);
+        View view = inflater.inflate(R.layout.layout_comments, null);
+        return new CommentViewHolder(view);
     }
 
     @Override
@@ -40,12 +40,11 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
         Comment comment = commentList.get(position);
 
         //binding the data with the viewholder views
-//        holder.textViewTitle.setText(comment.getTitle());
-//        holder.textViewShortDesc.setText(comment.getShortdesc());
-//        holder.textViewRating.setText(String.valueOf(comment.getRating()));
-//        holder.textViewPrice.setText(String.valueOf(comment.getPrice()));
+        holder.textAgrees.setText(comment.getLikes());
+        holder.textDislikes.setText(comment.getDislikes());
+        holder.textcomment.setText(String.valueOf(comment.getComment()));
+        holder.textUser.setText(String.valueOf(comment.getCommenter()));
 
-//        holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(comment.getImage()));
 
     }
 
@@ -58,17 +57,17 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
 
     class CommentViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textViewTitle, textViewShortDesc, textViewRating, textViewPrice;
-        ImageView imageView;
+        TextView textAgrees, textDislikes, textcomment, textUser;
+//        ImageView imageView;
 
         public CommentViewHolder(View itemView) {
             super(itemView);
 
-            textViewTitle = itemView.findViewById(R.id.textViewTitle);
-            textViewShortDesc = itemView.findViewById(R.id.textViewShortDesc);
-            textViewRating = itemView.findViewById(R.id.textViewRating);
-            textViewPrice = itemView.findViewById(R.id.textViewPrice);
-            imageView = itemView.findViewById(R.id.imageView);
+            textAgrees = itemView.findViewById(R.id.textAgrees);
+            textDislikes = itemView.findViewById(R.id.textDislikes);
+            textcomment = itemView.findViewById(R.id.textcomment);
+            textUser = itemView.findViewById(R.id.textUser);
+            // imageView = itemView.findViewById(R.id.imageView);
         }
     }
 }
