@@ -49,7 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <EditText
-        android:id="@+id/editTextCommentSection"
+        android:id="@+id/editText"
         android:layout_width="265dp"
         android:layout_height="52dp"
         android:layout_marginStart="12dp"
@@ -64,10 +64,11 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="addComment"
         android:text="@string/commentSectionButton"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextCommentSection"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.573"
-        app:layout_constraintStart_toEndOf="@+id/editTextCommentSection" />
+        app:layout_constraintStart_toEndOf="@+id/editText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
