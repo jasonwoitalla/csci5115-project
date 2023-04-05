@@ -38,7 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/backToInfoButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/back"
@@ -64,6 +64,7 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="addCommentSmartphone"
         android:text="@string/commentSectionButton"
         app:layout_constraintBaseline_toBaselineOf="@+id/editTextCommentSection"
         app:layout_constraintEnd_toEndOf="parent"

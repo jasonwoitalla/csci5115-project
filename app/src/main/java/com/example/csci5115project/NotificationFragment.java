@@ -58,7 +58,65 @@ public class NotificationFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_notification, container, false);
+
+        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_notification, container, false);
+
+        root.findViewById(R.id.batteryView).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentUtil.replaceFragment(getActivity(), new BatteryPageFragment());
+            }
+        });
+
+        root.findViewById(R.id.bluetoothView).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentUtil.replaceFragment(getActivity(), new BluetoothPageFragment());
+            }
+        });
+
+        root.findViewById(R.id.chargerView).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentUtil.replaceFragment(getActivity(), new ChargerPageFragment());
+            }
+        });
+
+        root.findViewById(R.id.gamingView).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentUtil.replaceFragment(getActivity(), new GamingConsolePageFragment());
+            }
+        });
+
+        root.findViewById(R.id.laptopView).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentUtil.replaceFragment(getActivity(), new LaptopPageFragment());
+            }
+        });
+
+        root.findViewById(R.id.lightbulbView).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentUtil.replaceFragment(getActivity(), new LightbulbPageFragment());
+            }
+        });
+
+        root.findViewById(R.id.smartphoneView).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentUtil.replaceFragment(getActivity(), new SmartphonePageFragment());
+            }
+        });
+
+        root.findViewById(R.id.smartwatchView).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentUtil.replaceFragment(getActivity(), new SmartwatchPageFragment());
+            }
+        });
+
+        return root;
     }
 }
