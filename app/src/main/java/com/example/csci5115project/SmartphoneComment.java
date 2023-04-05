@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,8 +64,8 @@ public class SmartphoneComment extends Fragment {
         //return inflater.inflate(R.layout.bluetooth_comments, container, false);
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.bluetooth_comments, container, false);
         recyclerView = (RecyclerView) root.findViewById(R.id.recyclerView);
-//        recyclerView.setHasFixedSize(true);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         CommentAdapter adapter = new CommentAdapter(getActivity(), commentList);
 
         //setting adapter to recyclerview

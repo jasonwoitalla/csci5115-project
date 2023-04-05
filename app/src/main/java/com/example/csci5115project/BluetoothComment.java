@@ -1,16 +1,17 @@
 package com.example.csci5115project;
 
-import android.content.Intent;
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,12 +86,20 @@ public class BluetoothComment extends Fragment {
         //return inflater.inflate(R.layout.bluetooth_comments, container, false);
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.bluetooth_comments, container, false);
         recyclerView = (RecyclerView) root.findViewById(R.id.recyclerView);
-//        recyclerView.setHasFixedSize(true);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         CommentAdapter adapter = new CommentAdapter(getActivity(), commentList);
 
         //setting adapter to recyclerview
         recyclerView.setAdapter(adapter);
         return root;
     }
+    private void replaceFragment(Fragment fragment) {
+        FragmentManager manager = getActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = manager.beginTransaction();
+        fragmentTransaction.replace(R.id.frameLayout, fragment);
+        fragmentTransaction.commit();
+    }
+
+
 }
