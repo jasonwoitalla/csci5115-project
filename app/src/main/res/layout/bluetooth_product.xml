@@ -38,7 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/backToInfoButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/back"
@@ -61,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/bluetoothComment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="addComment"

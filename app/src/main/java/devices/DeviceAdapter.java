@@ -73,14 +73,20 @@ public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.DeviceView
         img.setTextSize(TypedValue.COMPLEX_UNIT_SP,24);
 
         TextView tv = new TextView(this.mCtx);
-        tv.setText(this.title.get(position));
+        if(position < this.title.size())
+            tv.setText(this.title.get(position));
+        else
+            tv.setText(this.title.get(this.title.size() - 1));
 
         TextView img2 = new TextView(this.mCtx);
         img2.setText("Additional Sustainability Info\n");
         img2.setTextSize(TypedValue.COMPLEX_UNIT_SP,24);
 
         TextView tv2 = new TextView(this.mCtx);
-        tv2.setText(this.title2.get(position));
+        if(position < this.title2.size())
+            tv2.setText(this.title2.get(position));
+        else
+            tv2.setText(this.title2.get(this.title2.size() - 1));
 
         holder.textViewTitle.setText(device.getDeviceName());
         if(device.getBitmap() == null) {
@@ -97,7 +103,7 @@ public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.DeviceView
             public void onClick(View v) {
                 if (click) {
                     popUp.showAtLocation(layout, Gravity.LEFT, 0, 0);
-                    popUp.update(00, -30, 750, 1840);
+                    popUp.update(0, 0, 750, 2500);
                     click = false;
                 } else {
                     popUp.dismiss();
@@ -108,7 +114,7 @@ public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.DeviceView
 
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT);
-        layout.setBackgroundColor(Color.BLACK);
+        layout.setBackgroundColor(Color.WHITE);
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.addView(img, params);
         layout.addView(tv, params);
