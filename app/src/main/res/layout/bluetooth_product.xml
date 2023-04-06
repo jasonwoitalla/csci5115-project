@@ -64,7 +64,6 @@
         android:id="@+id/bluetoothComment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="addComment"
         android:text="@string/commentSectionButton"
         app:layout_constraintBaseline_toBaselineOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="parent"
