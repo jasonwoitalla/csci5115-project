@@ -65,9 +65,9 @@ public class BluetoothComment extends Fragment {
         }
         //initializing the productlist
 
-        commentList.add(new Comment(242,22,"The Google Pixel is an example of forced obsolescence", "Jane Smith"));
-        commentList.add(new Comment(222,111,"The Google Pixel is an example of forced obsolescence", "Jane Smithy"));
-        commentList.add(new Comment(112,2,"The Google Pixel is an example of forced obsolescence", "Janey Smith"));
+        commentList.add(new Comment(242,22,"Sony WH-1000XM4 heaphones last really long!", "Sonya Smith"));
+        commentList.add(new Comment(222,111,"Logitech has good cheap bluetooth mice", "Lo-Gi Tek"));
+        commentList.add(new Comment(112,2,"Airpods work with bluetooth too", "Steven Careers"));
 
 
     }

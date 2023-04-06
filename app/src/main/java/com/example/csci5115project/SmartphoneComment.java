@@ -52,9 +52,9 @@ public class SmartphoneComment extends Fragment {
         }
         //initializing the productlist
 
-        commentList.add(new Comment(242,22,"The Google Pixel is an example of forced obsolescence", "Jane Smith"));
-        commentList.add(new Comment(222,111,"The Google Pixel is an example of forced obsolescence", "Jane Smithy"));
-        commentList.add(new Comment(112,2,"The Google Pixel is an example of forced obsolescence", "Janey Smith"));
+        commentList.add(new Comment(242,22,"The Google Pixel is an example of forced obsolescence", "Boogle Smith"));
+        commentList.add(new Comment(222,111,"iPhones last long but R.I.P. when they stop supporting your iOS version", "Cousin Throckmorton"));
+        commentList.add(new Comment(112,2,"Motorola Razors look so cool (I know they aren't actually smartphones)", "Jasjit Singh"));
     }
 
     @Override

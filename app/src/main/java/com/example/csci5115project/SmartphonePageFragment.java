@@ -40,25 +40,15 @@ public class SmartphonePageFragment extends Fragment {
         root.findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                FragmentUtil.replaceFragment(getActivity(), new BluetoothComment());
                 addComment(view);
             }
         });
         return root;
     }
     public void addComment(View view){
-
         EditText editText = getActivity().findViewById(R.id.editTextCommentSection);
         String message = editText.getText().toString();
-        spFragment.commentList.add((new Comment(0,0,message,"anon_user")));
-        System.out.println(message);
+        spFragment.commentList.add((new Comment(0,0,message,"Anonymous User")));
         FragmentUtil.replaceFragment(getActivity(), spFragment);//MAY NEED BACKSTACK
-//        Intent intent = new Intent(this, BluetoothComment.class);
-//        EditText editText = (EditText) findViewById(R.id.editText);
-//        String message = editText.getText().toString();
-//   //     commentList.add(new Comment(0,0,message,"anon_user"));
-//
-//        intent.putExtra(EXTRA_MESSAGE, message);
-//        startActivity(intent);
     }
 }
