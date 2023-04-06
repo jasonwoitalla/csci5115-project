@@ -31,7 +31,7 @@ public class BluetoothComment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    List<Comment> commentList;
+    List<Comment> commentList = new ArrayList<>();
     RecyclerView recyclerView;
 
     public BluetoothComment() {
@@ -64,18 +64,11 @@ public class BluetoothComment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
         //initializing the productlist
-        commentList = new ArrayList<>();
-        commentList.add(new Comment(242,22,"The Google Pixel is an example of forced obsolescence", "Jane Smith"));
-        commentList.add(new Comment(222,111,"The Google Pixel is an example of forced obsolescence", "Jane Smithy"));
-        commentList.add(new Comment(112,2,"The Google Pixel is an example of forced obsolescence", "Janey Smith"));
-//        setContentView(R.layout.activity_display_message);
-//
-//        Intent intent = getActivity().getIntent();
-//        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-//
-//        commentList.add(new Comment(0,0,message,"anon_user"));
-//        TextView textView = (TextView)findViewById(R.id.textView2);
-//        textView.setText("Hello "+message);
+
+        commentList.add(new Comment(242,22,"Sony WH-1000XM4 heaphones last really long!", "Sonya Smith"));
+        commentList.add(new Comment(222,111,"Logitech has good cheap bluetooth mice", "Lo-Gi Tek"));
+        commentList.add(new Comment(112,2,"Airpods work with bluetooth too", "Steven Careers"));
+
 
     }
 
@@ -94,12 +87,4 @@ public class BluetoothComment extends Fragment {
         recyclerView.setAdapter(adapter);
         return root;
     }
-    private void replaceFragment(Fragment fragment) {
-        FragmentManager manager = getActivity().getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = manager.beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout, fragment);
-        fragmentTransaction.commit();
-    }
-
-
 }
