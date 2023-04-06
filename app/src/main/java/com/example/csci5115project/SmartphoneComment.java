@@ -20,7 +20,7 @@ public class SmartphoneComment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    List<Comment> commentList;
+    List<Comment> commentList = new ArrayList<>();
     RecyclerView recyclerView;
 
     public SmartphoneComment() {
@@ -51,7 +51,7 @@ public class SmartphoneComment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
         //initializing the productlist
-        commentList = new ArrayList<>();
+
         commentList.add(new Comment(242,22,"The Google Pixel is an example of forced obsolescence", "Jane Smith"));
         commentList.add(new Comment(222,111,"The Google Pixel is an example of forced obsolescence", "Jane Smithy"));
         commentList.add(new Comment(112,2,"The Google Pixel is an example of forced obsolescence", "Janey Smith"));
@@ -61,7 +61,6 @@ public class SmartphoneComment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.bluetooth_comments, container, false);
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.bluetooth_comments, container, false);
         recyclerView = (RecyclerView) root.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
